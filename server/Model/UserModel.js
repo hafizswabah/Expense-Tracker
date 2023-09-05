@@ -19,6 +19,10 @@ const UserSchema=new Mongoose.Schema({
     block:{
         type:Boolean,
         default:false
+    },
+    MonthlyExpense:{
+        type:Number,
+        default:0
     }
 })
 const UserModel=Mongoose.model("Users",UserSchema)

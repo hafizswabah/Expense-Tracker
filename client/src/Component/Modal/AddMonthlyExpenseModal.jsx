@@ -1,38 +1,32 @@
-import axios from 'axios';
-import React, { useState } from 'react';
-import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 
-
-const AddMonthlyExpenseModal = ({ showModal, handleCloseModal,  }) => {
-
-
+function AddMonthlyExpenseModal({ modalShow, handleClose }) {
   return (
-    <Modal show={showModal} onHide={handleCloseModal} centered dialogClassName="modal-md">
-      <Modal.Header closeButton>
-        <Modal.Title>Add Your Monthly Expense</Modal.Title>
+    <Modal show={modalShow} centered>
+      <Modal.Header closeButton onClick={handleClose}>
+        <Modal.Title>Monthly Income</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
-   
-          <Row>
-            <Col>
-              <Form.Group className="mb-3" controlId="slots">
-                <Form.Control type="text" style={{ width: '100%' }} placeholder='V' value={visitPlaces} onChange={(e) => { setPlaces(e.target.value) }} />
-              </Form.Group>
-            </Col>
-          </Row>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Control type="number" placeholder="Enter Monthly total Income" autoFocus />
+          </Form.Group>
+        
         </Form>
       </Modal.Body>
-      <Modal.Footer className="justify-content-center">
-        <Button variant="secondary" onClick={handleCloseModal} className="flex-grow-1">
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="primary" className="flex-grow-1">
-          Fix Amount
+        <Button variant="primary" onClick={handleClose}>
+          Update 
         </Button>
       </Modal.Footer>
     </Modal>
   );
-};
+}
 
-export default AddPackageModal;
+export default AddMonthlyExpenseModal;

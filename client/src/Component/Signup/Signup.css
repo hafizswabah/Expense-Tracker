@@ -44,7 +44,7 @@ a {
 	margin: 15px 0;
 }
 
-button {
+.sign-btn,.change-btn {
 	border-radius: 20px;
 	border: 1px solid #FF4B2B;
 	background-color: #FF4B2B;
@@ -59,15 +59,15 @@ button {
 	transition: transform 80ms ease-in;
 }
 
-button:active {
+.sign-btn,.change-btn :active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.sign-btn,.change-btn :focus {
 	outline: none;
 }
 
-button.ghost {
+button.change-btn  {
 	background-color: transparent;
 	border-color: #FFFFFF;
 }

@@ -94,7 +94,7 @@ const SlideFormComponent = () => {
                         <input type="email" placeholder="Email" onChange={(e) => { setMail(e.target.value) }} />
                         <input type="text" placeholder="Profession" onChange={(e) => { setProfession(e.target.value) }} />
                         <input type="password" placeholder="Password" onChange={(e) => { setPassword(e.target.value) }} />
-                        <button onClick={handleSignup}>Sign Up</button>
+                        <button className='sign-btn' onClick={handleSignup}>Sign Up</button>
                         <div className='spinner'>
                             <Stack sx={{ color: 'grey.500' }} spacing={2} direction="row">
                                 {spin && (
@@ -129,7 +129,7 @@ const SlideFormComponent = () => {
                         <input type="email" placeholder="Email" onChange={(e) => { setMail(e.target.value) }} />
                         <input type="password" placeholder="Password" onChange={(e) => { setPassword(e.target.value) }} />
                         <Link>Forgot your password?</Link>
-                        <button onClick={handleLogin}>Sign In</button>
+                        <button className='sign-btn' onClick={handleLogin}>Sign In</button>
                         <div className='spinner'>
                             <Stack sx={{ color: 'grey.500' }} spacing={2} direction="row">
                                 {spin && (
@@ -150,14 +150,14 @@ const SlideFormComponent = () => {
                         <div className="overlay-panel overlay-left">
                             <h1>Connect Back</h1>
                             <p>To keep connected with us please login to your Account</p>
-                            <button class="ghost" id="signIn" onClick={() => { setIsSignUpActive(false) }}>Sign In</button>
+                            <button className='change-btn' id="signIn" onClick={() => { setIsSignUpActive(false) }}>Sign In</button>
                         </div>
 
                         {/* Right overlay panel */}
                         <div className="overlay-panel overlay-right">
                             <h1>Welcome Buddy</h1>
                             <p>Track Your Expenses Meet Your Dream</p>
-                            <button class="ghost" id="signUp" onClick={() => { setIsSignUpActive(true) }}>Sign Up</button>
+                            <button className='change-btn' id="signUp" onClick={() => { setIsSignUpActive(true) }}>Sign Up</button>
                         </div>
                     </div>
                 </div>

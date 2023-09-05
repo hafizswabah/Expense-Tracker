@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Signup from './Component/Signup/Signup'
-import HomePage from "./Component/HomePage/HomePage"
+import HomePage from "./Component/NavBar/HomePage"
 import axios from "axios"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from 'react';
