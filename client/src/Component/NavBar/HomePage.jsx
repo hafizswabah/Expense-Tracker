@@ -8,13 +8,15 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import "./NavBar.css"
-import HomeSection from '../Sections/HomeSection';
+import HomeSection from '../Sections/HomeSection/HomeSection';
+import AddExpense from '../Sections/AddExpense/AddExpense';
 function NavBar() {
 
     const dispatch = useDispatch()
     const [value, setValue] = useState(0);
     const [bg, setBg] = useState("home");
     const [activeTab, setActiveTab] = useState(false);
+    const [modalShow, setModalShow] = useState(false)
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -38,6 +40,14 @@ function NavBar() {
                 dispatch({ type: "refresh" })
             }
         })
+    }
+
+    function handleAddExpenseSec() {
+        setBg("Add Expense")
+        setModalShow(true)
+    }
+    function handleClose() {
+        setModalShow(false)
     }
     return (
         <>
@@ -72,7 +82,8 @@ function NavBar() {
                             color: `${bg == "Add Expense" ? "white" : ""}`,
                             borderRadius: `${bg == "Add Expense" ? "30px" : ""}`,
                         }}
-                        onClick={() => { setBg("Add Expense") }}
+                        onClick={handleAddExpenseSec}
+
                     />
 
                     <Tab
@@ -104,6 +115,10 @@ function NavBar() {
             </div>
             <div className="complete-sec">
                 {bg == 'home' && <HomeSection />}
+            </div>
+            <div className="complete-sec">
+                {bg == 'Add Expense' && <AddExpense modalShow={modalShow}
+                    handleClose={handleClose} />}
             </div>
         </>
     )

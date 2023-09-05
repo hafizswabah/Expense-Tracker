@@ -4,7 +4,7 @@ import "./HomeSection.css"
 import { RiEditCircleFill } from "react-icons/ri";
 
 import axios from 'axios';
-import AddMonthlyExpenseModal from '../Modal/AddMonthlyExpenseModal';
+import AddMonthlyExpenseModal from '../../Modal/AddMonthlyExpenseModal';
 function HomeSection() {
     const [modalShow, setModalShow] = useState(false)
     const [monthlyExpense, setMonthlyExpense] = useState(0)
@@ -27,7 +27,10 @@ function HomeSection() {
                 setMonthlyExpense(data.MonthlyExpense)
             }
         })()
-    }, [monthlyExpense])
+    }, [monthlyExpense,modalShow])
+    const currentDate=new Date()
+    const currentMonth=currentDate.toLocaleDateString("default",{month:"long"})
+    const currentYear = currentDate.getFullYear();
 
     return (
         <>
@@ -54,7 +57,7 @@ function HomeSection() {
                         <p>Month</p>
                     </div>
                     <div className="spent-mon">
-                        <h4> sep </h4>
+                        <h4> {currentMonth} {currentYear}</h4>
                     </div>
                 </div>
 
