@@ -76,7 +76,7 @@ const SlideFormComponent = () => {
                 {/* Sign Up Form */}
                 <div className={`form-container sign-up-container ${isSignUpActive ? 'overlay-right' : 'overlay-left'}`}>
                     <form action="#">
-                        <h1>Create Account</h1>
+                        <h2>Create Account</h2>
                         <div className="social-container">
                             <Link to={""}>
                                 <FiInstagram />
@@ -90,10 +90,10 @@ const SlideFormComponent = () => {
 
                         </div>
                         <span>Connect us!</span>
-                        <input type="text" placeholder="Name" onChange={(e) => { setName(e.target.value) }} />
-                        <input type="email" placeholder="Email" onChange={(e) => { setMail(e.target.value) }} />
-                        <input type="text" placeholder="Profession" onChange={(e) => { setProfession(e.target.value) }} />
-                        <input type="password" placeholder="Password" onChange={(e) => { setPassword(e.target.value) }} />
+                        <input className='signup-input' type="text" placeholder="Name" onChange={(e) => { setName(e.target.value) }} />
+                        <input className='signup-input' type="email" placeholder="Email" onChange={(e) => { setMail(e.target.value) }} />
+                        <input className='signup-input' type="text" placeholder="Profession" onChange={(e) => { setProfession(e.target.value) }} />
+                        <input className='signup-input' type="password" placeholder="Password" onChange={(e) => { setPassword(e.target.value) }} />
                         <button className='sign-btn' onClick={handleSignup}>Sign Up</button>
                         <div className='spinner'>
                             <Stack sx={{ color: 'grey.500' }} spacing={2} direction="row">
@@ -113,7 +113,7 @@ const SlideFormComponent = () => {
                 {/* Sign In Form */}
                 <div className={`form-container sign-in-container ${isSignUpActive ? 'overlay-left' : 'overlay-right'}`}>
                     <form action="#">
-                        <h1>Sign In</h1>
+                        <h2>Sign In</h2>
                         <div className="social-container">
                             <Link to={""}>
                                 <FiInstagram />
@@ -126,8 +126,8 @@ const SlideFormComponent = () => {
                             </Link>
                         </div>
                         <span>connect us</span>
-                        <input type="email" placeholder="Email" onChange={(e) => { setMail(e.target.value) }} />
-                        <input type="password" placeholder="Password" onChange={(e) => { setPassword(e.target.value) }} />
+                        <input className='signup-input' type="email" placeholder="Email" onChange={(e) => { setMail(e.target.value) }} />
+                        <input className='signup-input' type="password" placeholder="Password" onChange={(e) => { setPassword(e.target.value) }} />
                         <Link>Forgot your password?</Link>
                         <button className='sign-btn' onClick={handleLogin}>Sign In</button>
                         <div className='spinner'>
@@ -148,14 +148,14 @@ const SlideFormComponent = () => {
                     <div className="overlay">
                         {/* Left overlay panel */}
                         <div className="overlay-panel overlay-left">
-                            <h1>Connect Back</h1>
+                            <h2>Connect Back</h2>
                             <p>To keep connected with us please login to your Account</p>
                             <button className='change-btn' id="signIn" onClick={() => { setIsSignUpActive(false) }}>Sign In</button>
                         </div>
 
                         {/* Right overlay panel */}
                         <div className="overlay-panel overlay-right">
-                            <h1>Welcome Buddy</h1>
+                            <h2>Welcome Buddy</h2>
                             <p>Track Your Expenses Meet Your Dream</p>
                             <button className='change-btn' id="signUp" onClick={() => { setIsSignUpActive(true) }}>Sign Up</button>
                         </div>

@@ -29,17 +29,10 @@
 
 .spent-mon h2 {
     color: white;
-    font-size: 35px;
-}
-.spent-mon h3 {
-    color: white;
-    font-size: 30px;
-}
-.spent-mon h4{
-    color: white;
     font-size: 32px;
-
+    font-weight: 600;
 }
+
 
 .spent-mon {
     display: flex;

@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import "./NavBar.css"
 import HomeSection from '../Sections/HomeSection/HomeSection';
 import AddExpense from '../Sections/AddExpense/AddExpense';
+import Expenses from '../Sections/Expenses/Expenses';
 function NavBar() {
 
     const dispatch = useDispatch()
@@ -73,6 +74,17 @@ function NavBar() {
                         onClick={() => { setBg("home") }}
 
                     />
+                       <Tab
+                        icon={<FaGavel />}
+                        label="Expenses"
+                        style={{
+                            flex: 1,
+                            background: `${bg == "Expenses" ? "#FF4A2C" : ""}`,
+                            color: `${bg == "Expenses" ? "white" : ""}`,
+                            borderRadius: `${bg == "Expenses" ? "30px" : ""}`,
+                        }}
+                        onClick={() => { setBg("Expenses") }}
+                    />
                     <Tab
                         icon={<FiPieChart />}
                         label="Add Expense"
@@ -86,17 +98,7 @@ function NavBar() {
 
                     />
 
-                    <Tab
-                        icon={<FaGavel />}
-                        label="Expenses"
-                        style={{
-                            flex: 1,
-                            background: `${bg == "Expenses" ? "#FF4A2C" : ""}`,
-                            color: `${bg == "Expenses" ? "white" : ""}`,
-                            borderRadius: `${bg == "Expenses" ? "30px" : ""}`,
-                        }}
-                        onClick={() => { setBg("Expenses") }}
-                    />
+                 
 
                     <Tab
                         icon={<FiShare />}
@@ -119,6 +121,9 @@ function NavBar() {
             <div className="complete-sec">
                 {bg == 'Add Expense' && <AddExpense modalShow={modalShow}
                     handleClose={handleClose} />}
+            </div>
+            <div className="complete-sec">
+                {bg == 'Expenses' && <Expenses />}
             </div>
         </>
     )

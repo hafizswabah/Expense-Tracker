@@ -8,6 +8,8 @@ import AddMonthlyExpenseModal from '../../Modal/AddMonthlyExpenseModal';
 function HomeSection() {
     const [modalShow, setModalShow] = useState(false)
     const [monthlyExpense, setMonthlyExpense] = useState(0)
+    const [spent, setSpent] = useState(0)
+  
 
     const { user } = useSelector((state) => {
         return state
@@ -28,6 +30,15 @@ function HomeSection() {
             }
         })()
     }, [monthlyExpense,modalShow])
+    useEffect(() => {
+        (async function () {
+            let { data } = await axios.get("/user/get-totalExpense", { params: { userId } })
+            if (!data.err) {
+                setSpent(data.totalspent)
+            }
+        })()
+    }, [monthlyExpense,modalShow])
+    const balance=monthlyExpense-spent
     const currentDate=new Date()
     const currentMonth=currentDate.toLocaleDateString("default",{month:"long"})
     const currentYear = currentDate.getFullYear();
@@ -41,7 +52,7 @@ function HomeSection() {
                         <p>spent</p>
                     </div>
                     <div className="spent-mon">
-                        <h2> ₹1000 / ₹{monthlyExpense}</h2>
+                        <h2> {spent} / ₹{monthlyExpense}</h2>
                         <div className='edit-sec' onClick={handleShowEdit}>
                             <p>Edit</p>
                             <RiEditCircleFill className='edit-icon' />
@@ -51,13 +62,13 @@ function HomeSection() {
                         <p>Balance</p>
                     </div>
                     <div className="spent-mon">
-                        <h3> ₹1000 </h3>
+                        <h2> ₹{balance} </h2>
                     </div>
                     <div className="spent-det">
                         <p>Month</p>
                     </div>
                     <div className="spent-mon">
-                        <h4> {currentMonth} {currentYear}</h4>
+                        <h2> {currentMonth} {currentYear}</h2>
                     </div>
                 </div>
 

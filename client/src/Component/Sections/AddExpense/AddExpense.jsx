@@ -11,7 +11,7 @@ function AddExpense({ modalShow, handleClose }) {
     const { user } = useSelector((state) => {
         return state
     })
-    const _id = user.details._id
+    const userId = user.details._id
     const [state, setState] = React.useState({
 
         vertical: 'bottom',
@@ -19,7 +19,7 @@ function AddExpense({ modalShow, handleClose }) {
     });
     const { vertical, horizontal } = state;
     const [expense, setExpense] = useState(null)
-    const [category, setCategory] = useState(null)
+    const [category, setCategory] = useState("Food")
     const [description, setDescription] = useState(null)
     const [open, setOpen] = useState(false);
     const Alert = React.forwardRef(function Alert(props, ref) {
@@ -36,8 +36,10 @@ function AddExpense({ modalShow, handleClose }) {
     async function handleAddExpense(e) {
         e.preventDefault()
         if (expense != null) {
-
-            let { data } = await axios.post("/user/add-expense", { expense, category, description })
+            let { data } = await axios.post("/user/add-expense", { expense, category, description, userId })
+            if (!data.err) {
+                handleClose()
+            }
         } else {
 
             setOpen(true);
