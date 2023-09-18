@@ -9,7 +9,7 @@ const app = express()
 app.use(
   cors({
     origin: [
-      "https://swabahexpensetracker.netlify.app/signup",
+      "https://swabahexpensetracker.netlify.app",
       "http://localhost:3000",
       "http://localhost:4173"
     ],
