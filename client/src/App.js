@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from 'react';
 function App() {
   axios.defaults.withCredentials = true;
-  axios.defaults.baseURL = "http://localhost:8888";
+  axios.defaults.baseURL = "https://expense-tracker-uydk.onrender.com";
   const { user, refresh } = useSelector((state) => {
     return state
   })
