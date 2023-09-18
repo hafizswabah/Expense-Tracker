@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./Expense.css"
-import { FcIcons8Cup } from "react-icons/fc";
+import { FcOk } from "react-icons/fc";
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 function Expenses() {
@@ -27,7 +27,7 @@ function Expenses() {
                     return <div className="expense-sec-det">
 
                         <div className="icon-sec">
-                            <FcIcons8Cup className='icon'></FcIcons8Cup>
+                            <FcOk className='icon'></FcOk>
                         </div>
                         <div className="exp-details">
                             <div className="exp-det-head">
@@ -41,8 +41,8 @@ function Expenses() {
                                 </p>
                             </div>
                         </div>
-                        <div className="exp-date">
-                            <h4>{item.amount} ₹</h4>
+                        <div className="exp-date exp-det-head">
+                            <h3>{item.amount} ₹</h3>
                             <p>{new Date(item.date).toDateString()}</p>
                         </div>
                     </div>

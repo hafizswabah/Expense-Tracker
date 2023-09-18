@@ -6,9 +6,10 @@ align-items: center;
 
 .expense-sec-det {
     width: 700px;
-    height: 100px;
+    height: 70px;
     border: 1px solid #FF464D;
-    color: black;
+    background: #FF464D;
+    color: white;
     border-radius: 30px;
     margin: 11px 0px;
     padding: 5px;
@@ -18,10 +19,11 @@ align-items: center;
 }
 
 .icon-sec {
-    width: 95px;
-    height: 88px;
+    width: 62px;
+    height: 60px;
     border: 1px solid #FF464D;
-    border-radius: 27px;
+    background: white;
+    border-radius: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,18 +40,19 @@ align-items: center;
     margin: 17px 0px;
 }
 .exp-det-head h3{
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 600;
+    margin-top: 15px;
 }
 .exp-det-desc p{
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 300;
 }
 .exp-date{
-    font-size: 23px;
+    font-size: 21px;
     font-weight: 600; 
 }
 .exp-date p{
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 300;
 }
