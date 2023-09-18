@@ -1,22 +1,20 @@
 import UserModel from "../Model/UserModel.js";
 import jwt from "jsonwebtoken"
 export async function userSignup(req, res) {
-    console.log(req.body);
     let { name, email, password, profession } = req.body
     if (name.trim() === "" || email.trim() === "" || profession.trim() === "" || password.length == "") {
         res.json({ err: true, message: "Enter required Details" })
     }
     let user = await UserModel.findOne({ email })
-    console.log(user);
     if (user) {
         return res.json({ err: true, message: 'You already have an account please do sign In' })
     }
     const NewUser = new UserModel({ name, email, password, profession })
     await NewUser.save()
-    let tocken = jwt.sign({
+    let token = jwt.sign({
         id: NewUser._id
     }, "jwt-screte")
-    return res.cookie("tocken",tocken,{
+    return res.cookie("token",token,{
         httpOnly: true,
         secure: true,
         maxAge: 1000 * 60 * 10,
