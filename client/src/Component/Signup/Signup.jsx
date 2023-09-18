@@ -128,7 +128,6 @@ const SlideFormComponent = () => {
                         <span>connect us</span>
                         <input className='signup-input' type="email" placeholder="Email" onChange={(e) => { setMail(e.target.value) }} />
                         <input className='signup-input' type="password" placeholder="Password" onChange={(e) => { setPassword(e.target.value) }} />
-                        <Link>Forgot your password?</Link>
                         <button className='sign-btn' onClick={handleLogin}>Sign In</button>
                         <div className='spinner'>
                             <Stack sx={{ color: 'grey.500' }} spacing={2} direction="row">

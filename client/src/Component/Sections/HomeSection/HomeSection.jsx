@@ -52,7 +52,7 @@ function HomeSection() {
                         <p>spent</p>
                     </div>
                     <div className="spent-mon">
-                        <h2> {spent} / ₹{monthlyExpense}</h2>
+                        <h2> ₹{spent} / ₹{monthlyExpense}</h2>
                         <div className='edit-sec' onClick={handleShowEdit}>
                             <p>Edit</p>
                             <RiEditCircleFill className='edit-icon' />
