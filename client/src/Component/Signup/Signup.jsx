@@ -26,10 +26,10 @@ const SlideFormComponent = () => {
         setSpin(true)
         if (!err) {
             let { data } = await axios.post("/user/auth/signup", { name, email, password, profession })
-            if (data.err) {
-                setErrMessage(data.message)
-            } else {
+            if (!data.err) {
                 dispatch({ type: "refresh" })
+            } else {
+                setErrMessage(data.message)
             }
             setSpin(false)
         }
